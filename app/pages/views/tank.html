@@ -1,0 +1,143 @@
+<div ng-controller="tankController">
+    <div class="container">
+        <ul class="pager">
+            <li class="previous"><a ng-click="hrefOnTank(prevPage)" ng-href="#/tank/{{prevPage}}" ng-if="prevPage > 0"><i class="glyphicon glyphicon-chevron-left"></i> {{prevPage}}</a></li>
+            <li class="next"><a ng-click="hrefOnTank(nextPage)" ng-href="#/tank/{{nextPage}}" ng-if="nextPage <= tanksCollection.length">{{nextPage}} <i class="glyphicon glyphicon-chevron-right"></i></a></li>
+        </ul>
+    </div>
+
+    <h1 class="title">{{currentTank.name}} образца {{currentTank.year}} года</h1>
+
+    <div class="container">
+        <div class="photo-title">
+            <img class="img-thumbnail" src="fonts/tanks/{{currentTank.images[0]}}">
+            <a class="hint--right  hint--error" data-hint="Больше фото" ng-href="#/tank/{{currentTank.id}}#photo"><img class="img-thumbnail" src="fonts/photogalerea.jpg"></a>
+            <ul>
+                <li><a ng-href="#/tank/{{currentTank.id}}#technicaldata">Технические данные танка</a></li>
+                <li><a ng-href="#/tank/{{currentTank.id}}#size">Габаритные размеры</a></li>
+                <li><a ng-href="#/tank/{{currentTank.id}}#armor">Броня</a></li>
+                <li><a ng-href="#/tank/{{currentTank.id}}#speed">Скорость по шоссе</a></li>
+                <li><a ng-href="#/tank/{{currentTank.id}}#powerreserve">Запас хода по шоссе</a></li>
+                <li><a ng-href="#/tank/{{currentTank.id}}#obstacles">Преодолеваемые препятствия</a></li>
+            </ul>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="container" id="description">
+            <table class="table table-hover tank-description">
+                <tr id="technicaldata"><th>Технические данные танка</th><td></td></tr>
+                <tr>
+                    <td>Боевая масса</td>
+                    <td class="tank-description-td">{{currentTank.tth.massa}}</td>
+                </tr>
+                <tr>
+                    <td>Экипаж</td>
+                    <td class="tank-description-td">{{currentTank.tth.ekipazh}}</td>
+                </tr>
+                <tr>
+                     <td>Вооружение</td>
+                     <td class="tank-description-td">{{currentTank.tth.vooryzhenie}}</td>
+                </tr>
+                <tr>
+                        <td>Боекомплект</td>
+                        <td class="tank-description-td">{{currentTank.tth.boekomplekt}}</td>
+                    </tr>
+                    <tr>
+                        <td>Двигатель</td>
+                        <td class="tank-description-td">{{currentTank.tth.dvigatel}}</td>
+                    </tr>
+                    <tr>
+                        <td>Удельное давление на грунт</td>
+                        <td class="tank-description-td">{{currentTank.tth.ydelnoe_davlenie_na_grynt}}</td>
+                    </tr>
+                    <tr id="size"><th>Габаритные размеры:</th><td></td></tr>
+                    <tr>
+                        <td>длина</td>
+                        <td class="tank-description-td">{{currentTank.tth.razmeri.dlina}}</td>
+                    </tr>
+                    <tr>
+                        <td>ширина</td>
+                        <td class="tank-description-td">{{currentTank.tth.razmeri.shirina}}</td>
+                    </tr>
+                    <tr>
+                        <td>высота</td>
+                        <td class="tank-description-td">{{currentTank.tth.razmeri.visota}}</td>
+                    </tr>
+                    <tr id="armor"><th>Броня:</th><td></td></tr>
+                    <tr>
+                        <td>лоб корпуса</td>
+                        <td class="tank-description-td">{{currentTank.tth.bronya.lob_korpusa}}</td>
+                    </tr>
+                    <tr>
+                        <td>борт, корма</td>
+                        <td class="tank-description-td">{{currentTank.tth.bronya.bort_korma}}</td>
+                    </tr>
+                    <tr>
+                        <td>башня</td>
+                        <td class="tank-description-td">{{currentTank.tth.bronya.bashnya}}</td>
+                    </tr>
+                    <tr>
+                        <td>крыша</td>
+                        <td class="tank-description-td">{{currentTank.tth.bronya.krysha}}</td>
+                    </tr>
+                    <tr>
+                        <td>днище</td>
+                        <td class="tank-description-td">{{currentTank.tth.bronya.dniwe}}</td>
+                    </tr>
+                    <tr id="speed"><td>Скорость по шоссе:</td><td></td></tr>
+                    <tr>
+                        <td>на колесах</td>
+                        <td class="tank-description-td">{{currentTank.tth.skorost.na_kolesah}}</td>
+                    </tr>
+                    <tr>
+                        <td>на гусеницах</td>
+                        <td class="tank-description-td">{{currentTank.tth.skorost.na_gysenicah}}</td>
+                    </tr>
+                    <tr id="powerreserve"><th>Запас хода по шоссе:</th><td></td></tr>
+                    <tr>
+                        <td>на колесах</td>
+                        <td class="tank-description-td">{{currentTank.tth.zapas_hoda.na_kolesah}}</td>
+                    </tr>
+                    <tr>
+                        <td>на гусеницах</td>
+                        <td class="tank-description-td">{{currentTank.tth.zapas_hoda.na_gysenicah}}</td>
+                    </tr>
+                    <tr id="obstacles"><th>Преодолеваемые препятствия:</th><td></td></tr>
+                    <tr>
+                        <td>высота стенки</td>
+                        <td class="tank-description-td">{{currentTank.tth.prepyatstvia.visota_stenki}}</td>
+                    </tr>
+                    <tr>
+                        <td>ширина рва</td>
+                        <td class="tank-description-td">{{currentTank.tth.prepyatstvia.shirina_rva}}</td>
+                    </tr>
+                    <tr>
+                        <td>глубина брода</td>
+                        <td class="tank-description-td">{{currentTank.tth.prepyatstvia.glybina_broda}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="container tank-photo" id="photo">
+                <h3>Фотогалерея:</h3>
+                <br/>
+                <ul class="list-inline">
+                    <li ng-repeat="image in currentTank.images">
+                        <a ng-href="fonts/tanks/{{image}}" target="_blank"><img class="img-thumbnail" src="fonts/tanks/{{image}}"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul class="pager">
+            <li class="previous"><a ng-click="hrefOnTank(prevPage)" ng-href="#/tank/{{prevPage}}" ng-if="prevPage > 0"><i class="glyphicon glyphicon-chevron-left"></i> {{prevPage}}</a></li>
+            <li><a ng-href="#/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+            <li class="next"><a ng-click="hrefOnTank(nextPage)" ng-href="#/tank/{{nextPage}}" ng-if="nextPage <= tanksCollection.length">{{nextPage}} <i class="glyphicon glyphicon-chevron-right"></i></a></li>
+        </ul>
+    </div>
+
+</div>

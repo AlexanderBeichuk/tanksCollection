@@ -1,0 +1,85 @@
+body{
+    background: url("../fonts/background.jpg");
+    background-size: 100%;
+}
+
+.logo {
+    padding: 0;
+}
+
+.title {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+}
+
+.search-box {
+    width: 60%;
+}
+
+.list-tanks {
+    width: 60%;
+}
+
+.list-tanks ul {
+    margin-left: 20px;
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: large;
+}
+
+.list-tanks ul li a{
+    color: black;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.list-tanks ul li a:hover {
+    text-decoration: none;
+    color: #c9302c;
+    padding-left: 10px;
+}
+
+.list-tanks ul li a:hover img {
+    display: inline;
+}
+
+.list-tanks ul li a img {
+    display: none;
+}
+
+.tank-description {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: large;
+}
+
+.tank-description-td {
+    text-align: center;
+}
+
+.tank-photo img{
+    width: 300px;
+    height: 150px;
+    margin: 10px 50%;
+}
+.photo-title {
+    height: 300px;
+}
+
+.photo-title img{
+    vertical-align: bottom;
+ }
+
+.photo-title ul {
+    float: right;
+    list-style-type: decimal;
+}
+
+.photo-title ul li a {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+}
+
+.photo-title ul li a:hover {
+    text-decoration: none;
+    color: #c9302c
+}

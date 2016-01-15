@@ -1,0 +1,18 @@
+<div ng-controller="homeController">
+    <h2 class="title">Главная</h2>
+
+    <div class="input-group search-box">
+        <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+    </div>
+
+        <br/>
+
+    <div class="list-tanks">
+        <h3 class="title">Моя коллекция</h3>
+        <ul class="list-group">
+            <li class="list-group-item"  ng-repeat="tank in tanksCollection | filter: search track by $index ">
+                <a ng-click="getCurrentTank(tank)" ng-href="#/tank/{{tank.id}}"><img class="hover-icon" src="fonts/chevron-right.png" alt="">{{tank.name + "   " + tank.year}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
